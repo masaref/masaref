@@ -1,36 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+
+    <group android:id="@+id/category_zero">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_language"
+            android:title="English" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/category_one">
+
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="Home" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_menu_profile"
+            android:title="Profile" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_cards_and_accounts"
+            android:icon="@drawable/ic_menu_cards_and_accounts"
+            android:title="Cards and Accounts" />
+        <item
+            android:id="@+id/nav_agenda"
+            android:icon="@drawable/ic_menu_agenda"
+            android:title="Agenda" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
+    <group android:id="@+id/category_two">
+        <item
+            android:id="@+id/nav_report_by_date"
+            android:icon="@drawable/ic_menu_report_by_date"
+            android:title="Report by Date" />
+        <item
+            android:id="@+id/nav_report_by_category"
+            android:icon="@drawable/ic_menu_report_by_category"
+            android:title="Report by Category" />
+    </group>
+
+
+    <group android:id="@+id/category_three">
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="Settings" />
+    </group>
 
 </menu>

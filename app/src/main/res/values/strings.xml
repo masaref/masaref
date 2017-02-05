@@ -1,8 +1,91 @@
 <resources>
+    <!-- Global Variables -->
     <string name="app_name">Masaref</string>
-
+    <string name="app_slogan">Personalize your expenses!</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_settings">Settings</string>
+
+    <!-- Activities Section -->
+    <!-- LoadingActivity -->
+    <string name="title_activity_loading">LoadingActivity</string>
+    <string name="loadingText">Loading...</string>
+
+    <!-- WelcomeActivity-->
+    <string name="title_activity_welcome">Welcome</string>
+    <string name="welcome_activity_title">Welcome to Masaref!</string>
+    <string name="welcome_activity_message">With Masaref you can keep track of all your expenses!</string>
+    <string name="welcome_activity_create_account">New user? Create account!</string>
+    <string name="welcome_activity_sign_up_with_facebook">Sign up with Facebook</string>
+    <string name="welcome_activity_sign_in">Joined already, Sign in!</string>
+
+    <!-- ProfileActivity -->
+    <string name="title_activity_profile">Profile</string>
+
+    <!-- CartsAndAccounts-->
+    <string name="title_activity_cards_and_accounts">Carts and Accounts</string>
+
+    <!-- AgendaActivity-->
+    <string name="title_activity_agenda">Agenda</string>
+
+    <!-- ReportByDateActivity-->
+    <string name="title_activity_report_by_date">Report By Date </string>
+
+    <!-- ReportByCategoryActivity-->
+    <string name="title_activity_report_by_category">Report By Category</string>
+
+    <!-- SettingsActivity-->
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- SignInActivity-->
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="sign_in_activity_welcome_title">Welcome to Masaref!</string>
+    <string name="sign_in_activity_username">username</string>
+    <string name="sign_in_activity_password">password</string>
+    <string name="sign_in_activity_keep_sign_in">Keep me sign in!</string>
+    <string name="sign_in_activity_sign_in">Sign in</string>
+
+    <!-- SignUpActivity-->
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <!-- SignUpUserInfoFragment -->
+    <string name="new_account_user_info_fragment_title">Thank you for signing up with us!</string>
+    <string name="new_account_user_info_fragment_country">Country</string>
+    <string name="new_account_user_info_fragment_first_name">First Name</string>
+    <string name="new_account_user_info_fragment_last_name">Last Name</string>
+    <string name="new_account_user_info_fragment_occupation">Occupation</string>
+    <string name="new_account_user_info_fragment_organization">Organization</string>
+    <string name="new_account_user_info_fragment_dob">Date of birth</string>
+
+    <!-- SignUpLoginInfoFragment -->
+    <string name="new_account_login_info_fragment_title">Thank you for signing up with us!</string>
+    <string name="new_account_login_info_username">username</string>
+    <string name="new_account_login_info_password">password</string>
+    <string name="new_account_login_info_email">E-mail</string>
+    <string name="new_account_login_info_mobile">Mobile</string>
+    <string name="new_account_login_info_secret_question_one">First secret question</string>
+    <string name="new_account_login_info_secret_question_two">First secret question</string>
+
+
+    <!-- SignUpWithFacebook-->
+    <string name="title_activity_sign_up_with_facebook">SignUpWithFacebookActivity</string>
+
+    <!-- OperationsActivity-->
+    <string name="title_activity_operations">Masaref</string>
+
+    <!-- Recover Account Activity-->
+    <string name="title_activity_recover_account">RecoverAccountActivity</string>
+
+    <!-- Recover Account Registered Email Fragment -->
+    <string name="txtView_recover_account_registered_email_title">Need help to sign in?</string>
+    <string name="txtView_recover_account_registered_email_message">We are here to help you!</string>
+    <string name="etxtView_recover_account_registered_email_input_email">Enter registered email here.</string>
+
+
+    <!-- Recover Account Registered Secret Questions -->
+    <string name="txtView_recover_account_secret_questions_title">Need help to sign in?</string>
+    <string name="txtView_recover_account_secret_questions_message">We are here to help you!</string>
+
+
+
+
 </resources>
