@@ -40,6 +40,7 @@ public class AgendaActivity extends GeneralActivity {
         });
         
     }
+
     public void onBackPressed(){
         Intent openHome = new Intent(this, HomeActivity.class);
         startActivity(openHome);
