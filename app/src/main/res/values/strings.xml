@@ -84,8 +84,8 @@
     <!-- Recover Account Registered Secret Questions -->
     <string name="txtView_recover_account_secret_questions_title">Need help to sign in?</string>
     <string name="txtView_recover_account_secret_questions_message">We are here to help you!</string>
-
-
+    <string name="title_activity_add_income_category">AddIncomeCategoryActivity</string>
+    <string name="title_activity_add_expense_category">AddExpenseCategoryActivity</string>
 
 
 </resources>

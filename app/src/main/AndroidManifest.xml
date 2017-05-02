@@ -132,6 +132,34 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.masaref.bahez.masaref.MasarefActivities.WelcomeActivity" />
         </activity>
+
+        <provider
+            android:name=".MasarefContentProvider.MasarefContentProvider"
+            android:authorities="com.masaref.bahez.masaref.MasarefContentProvider.MasarefContentProvider" />
+
+        <service
+            android:name=".MasarefContentProvider.MasarefDefaultContent"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".MasarefActivities.AddIncomeCategoryActivity"
+            android:label="@string/title_activity_add_income_category"
+            android:parentActivityName=".MasarefActivities.SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.masaref.bahez.masaref.MasarefActivities.SettingsActivity" />
+        </activity>
+        <activity
+            android:name=".MasarefActivities.AddExpenseCategoryActivity"
+            android:label="@string/title_activity_add_expense_category"
+            android:parentActivityName=".MasarefActivities.SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.masaref.bahez.masaref.MasarefActivities.SettingsActivity" />
+        </activity>
     </application>
 
 </manifest>

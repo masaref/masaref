@@ -3,7 +3,9 @@ package com.masaref.bahez.masaref.MasarefActivities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
+import com.masaref.bahez.masaref.MasarefContentProvider.MasarefDefaultContent;
 import com.masaref.bahez.masaref.R;
 
 /**
@@ -26,6 +28,7 @@ public class ProfileActivity extends GeneralActivity {
 
         //GeneralActivity's method to handle the navigation drawer.
         super.generateDrawer();
+
 
     }
 

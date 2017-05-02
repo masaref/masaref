@@ -1,10 +1,12 @@
 package com.masaref.bahez.masaref.MasarefActivities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
+import com.masaref.bahez.masaref.MasarefContentProvider.MasarefDefaultContent;
 import com.masaref.bahez.masaref.R;
 
 /**
@@ -27,9 +29,21 @@ public class LoadingActivity extends AppCompatActivity {
 
                 Intent i=new Intent(LoadingActivity.this, WelcomeActivity.class);
                 startActivity(i);
+
+                final String PREFS_NAME = "MyPrefsFile";
+
+                SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+                if (settings.getBoolean("masaref_first_time", true)) {
+                    //the app is being launched for first time, do something
+
+                    // Starting Service to add default data into the database.
+                    startService(new Intent(getBaseContext(), MasarefDefaultContent.class));
+
+                    settings.edit().putBoolean("masaref_first_time", false).commit();
+                }
                 finish();
             }
-        }, 5000);
+        }, 1000);
     }
-
 }
