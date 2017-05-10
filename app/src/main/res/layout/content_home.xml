@@ -1,22 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MasarefActivities.HomeActivity"
-    tools:showIn="@layout/app_bar_home">
+    tools:showIn="@layout/app_bar_home"
+    android:background="@color/dim_foreground_disabled_material_dark">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is the home page!"
-        android:id="@+id/textView2" />
+        android:layout_marginTop="10dp"
+        android:id="@+id/section_home_activity_display_card"
+        android:background="@color/bright_foreground_inverse_material_light">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_home_activity_display_card" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/section_home_activity_display_balance"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/bright_foreground_material_dark">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Card Balance"
+            android:gravity="left"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/txt_home_activity_display_balance_title"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:weightSum="1.0">
 
 
-</RelativeLayout>
+            <TextView
+                android:layout_width="0dip"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"
+                android:text="Income:"
+                android:gravity="right"
+                android:id="@+id/txt_home_activity_display_income_label"/>
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_weight=".47"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:gravity="right"
+                android:id="@+id/txt_home_activity_display_income_value"/>
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_weight=".03"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:gravity="right"
+                android:id="@+id/txt_home_activity_display_income_indicator"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:weightSum="1.0">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:text="Expense:"
+                    android:gravity="right"
+                    android:id="@+id/txt_home_activity_display_expense_label"/>
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_weight=".47"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:gravity="right"
+                    android:id="@+id/txt_home_activity_display_expense_value"/>
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_weight=".03"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="-"
+                    android:id="@+id/txt_home_activity_display_expense_indicator"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:weightSum="1.0">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:text="Balance:"
+                    android:gravity="right"
+                    android:id="@+id/txt_home_activity_display_balance_label"/>
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_weight=".47"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:gravity="right"
+                    android:id="@+id/txt_home_activity_display_balance_value"/>
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_weight=".03"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="="
+                    android:id="@+id/txt_home_activity_display_balance_indicator"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+

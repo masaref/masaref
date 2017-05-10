@@ -30,6 +30,8 @@ public class MasarefDefaultContent extends Service {
 
     public static final Uri URI_TABLE_USER = Uri.parse("content://com.masaref.bahez.masaref.MasarefContentProvider.MasarefContentProvider/tableUser");
 
+    public static final Uri URI_TABLE_GLOBAL_CONFIGURATION = Uri.parse("content://com.masaref.bahez.masaref.MasarefContentProvider.MasarefContentProvider/tableGlobalConfiguration");
+
 
     ContentResolver resolver;
 
@@ -47,6 +49,7 @@ public class MasarefDefaultContent extends Service {
         insertDefaultCards();
         insertDefaultCategoryIncome();
         insertDefaultCategoryExpense();
+        insertDefaultConfiguration();
         return START_STICKY;
     }
 
@@ -55,14 +58,11 @@ public class MasarefDefaultContent extends Service {
 
         ContentValues values = new ContentValues();
 
-        String cardName [] = {"Cash", "Card 1", "Card 2", "Savings"};
-        Double cardAmounts [] = {0.0, 0.0, 0.0, 0.0 };
-        Integer cardIcons [] = {R.drawable.ic_card_card_1, R.drawable.ic_card_card_1, R.drawable.ic_card_card_1, R.drawable.ic_card_saving };
+        String cardName [] = {"Cash", "Card 1", "Savings"};
+        Integer cardIcons [] = {R.drawable.ic_card_card_1, R.drawable.ic_card_card_1, R.drawable.ic_card_saving };
 
-        for (int i = 0; i <4; i++){
+        for (int i = 0; i <3; i++){
             values.put(MasarefContentProvider.TABLE_CARD_FIELD_NAME, cardName[i] );
-            values.put(MasarefContentProvider.TABLE_CARD_FIELD_CURRENT_AMOUNT, cardAmounts[i] );
-            values.put(MasarefContentProvider.TABLE_CARD_FIELD_TOTAL_AMOUNT, cardAmounts[i] );
             values.put(MasarefContentProvider.TABLE_CARD_FIELD_ICON, cardIcons[i] );
             Uri uri = getContentResolver().insert(MasarefContentProvider.URI_CARD, values);
         }
@@ -73,9 +73,9 @@ public class MasarefDefaultContent extends Service {
     public void insertDefaultCategoryIncome(){
         ContentValues values = new ContentValues();
 
-        String categoryIncomeName [] = {"Loan", "Salary", "Benefits"};
+        String categoryIncomeName [] = {"Salary", "Loan", "Benefits"};
         String type= "income";
-        Integer categoryIncomeIcon  [] = {R.drawable.ic_income_loan, R.drawable.ic_income_salary, R.drawable.ic_income_benefits};
+        Integer categoryIncomeIcon  [] = {R.drawable.ic_income_salary,R.drawable.ic_income_loan, R.drawable.ic_income_benefits};
 
         for(int i=0; i <categoryIncomeName.length; i++){
             values.put(MasarefContentProvider.TABLE_CATEGORY_FIELD_NAME, categoryIncomeName[i]);
@@ -103,6 +103,19 @@ public class MasarefDefaultContent extends Service {
 
             Uri uri = getContentResolver().insert(MasarefContentProvider.URI_CATEGORY, values);
         }
+    }
+
+    public void insertDefaultConfiguration(){
+        ContentValues values = new ContentValues();
+
+        values.put(MasarefContentProvider.TABLE_GLOBAL_CONFIGURATION_FIELD_NAME, "dateformat");
+        values.put(MasarefContentProvider.TABLE_GLOBAL_CONFIGURATION_FIELD_VALUE, "dd-mm-yyyy");
+        Uri uri = getContentResolver().insert(MasarefContentProvider.URI_GLOBAL_CONFIGURATION, values);
+
+        values.put(MasarefContentProvider.TABLE_GLOBAL_CONFIGURATION_FIELD_NAME, "timeformat");
+        values.put(MasarefContentProvider.TABLE_GLOBAL_CONFIGURATION_FIELD_VALUE, "12:00");
+
+        Uri uriSecond = getContentResolver().insert(MasarefContentProvider.URI_GLOBAL_CONFIGURATION, values);
     }
 
 

@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
-            android:id="@+id/etxt_fragment_income_input_amount" />
+            android:id="@+id/edit_fragment_income_input_amount" />
 
     </LinearLayout>
 
@@ -76,7 +76,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/etxtView_fragment_income_description" />
+            android:id="@+id/edit_expense_fragment_expense_description" />
 
     </LinearLayout>
 
@@ -92,14 +92,14 @@
             android:layout_height="wrap_content"
             android:inputType="date"
             android:ems="10"
-            android:id="@+id/editText" />
+            android:id="@+id/edit_income_fragment_income_date" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="time"
             android:ems="10"
-            android:id="@+id/editText2" />
+            android:id="@+id/edit_income_fragment_income_time" />
 
 
 

@@ -1,6 +1,12 @@
 package com.masaref.bahez.masaref.MasarefActivities;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -11,6 +17,8 @@ import com.masaref.bahez.masaref.MasarefCustomAdapters.CustomListAdapter;
 
 import com.masaref.bahez.masaref.R;
 
+import java.util.ArrayList;
+
 /**
  * Class Name: SettingsActivity
  * Created by: Mohammad Rafi Bahez
@@ -20,6 +28,11 @@ import com.masaref.bahez.masaref.R;
  */
 
 public class SettingsActivity extends GeneralActivity {
+
+    ContentResolver resolver;
+
+    // URI
+    static final Uri URI_TABLE_GLOBAL_CONFIGURATION = Uri.parse("content://com.masaref.bahez.masaref.MasarefContentProvider.MasarefContentProvider/tableGlobalConfiguration");
 
 
     String [] listItems = {"Expense Category" , "Income Category" , "Currency Format", "Date and Time Format",
@@ -68,6 +81,8 @@ public class SettingsActivity extends GeneralActivity {
                    case 2:
                        break;
                    case 3:
+                       opener = new Intent(SettingsActivity.this, DateAndTimeFormatActivity.class);
+                       startActivity(opener);
                        break;
                    case 4:
                        break;
@@ -85,8 +100,6 @@ public class SettingsActivity extends GeneralActivity {
         });
 
     }
-
-
 
     // Defines customized navigation through the application.
     public void onBackPressed(){

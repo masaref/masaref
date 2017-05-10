@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -76,6 +78,14 @@ public class AddExpenseCategoryActivity extends AppCompatActivity {
         defaultExpenseCategories.setAdapter(adapterForExpenseType);
 
         adapterForExpenseType.notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.add_expense_category_action_bar_menu, menu);
+        return true;
     }
 
 }

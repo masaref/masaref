@@ -38,7 +38,7 @@ public class CustomSpinnerAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return itemname[position];
     }
 
     @Override

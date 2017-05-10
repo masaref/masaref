@@ -76,7 +76,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/etxtView_fragment_income_description" />
+            android:id="@+id/edit_expense_fragment_expense_description" />
 
     </LinearLayout>
 

@@ -88,4 +88,17 @@
     <string name="title_activity_add_expense_category">AddExpenseCategoryActivity</string>
 
 
+    <!-- Date and Time format Setting Dialogbox-->
+    <string-array name="options">
+        <item>dd-mm-yyyy</item>
+        <item>mm-dd-yyyy</item>
+        <item>dd-mm-yyyy</item>
+        <item>12:00 </item>
+        <item>24:00 </item>
+    </string-array>
+
+
+    <string name="title_activity_date_and_time_format">DateAndTimeFormat</string>
+
+
 </resources>

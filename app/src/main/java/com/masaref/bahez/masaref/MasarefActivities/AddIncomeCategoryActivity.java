@@ -46,6 +46,14 @@ public class AddIncomeCategoryActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.add_income_category_action_bar_menu, menu);
+        return true;
+    }
+
     public void getDefaultIncomeCategories() {
         // Get Income Category Value from DB.
         int size, counter = 0;

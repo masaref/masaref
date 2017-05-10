@@ -1,5 +1,6 @@
 package com.masaref.bahez.masaref.MasarefActivities;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -14,14 +15,18 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.DatePicker;
 import android.widget.TextView;
 
 import com.masaref.bahez.masaref.MasarefTabsPager.TabsPagerAdapter;
 import com.masaref.bahez.masaref.R;
+
+import java.util.Calendar;
 
 /**
  * Class Name: OperationsActivity
@@ -35,6 +40,8 @@ public class OperationsActivity extends AppCompatActivity {
 
     private TabsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
+
+    TextView incomeDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +63,11 @@ public class OperationsActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.operations_activity_tab_layout);
         tabLayout.setupWithViewPager(mViewPager);
 
+        // GUI EditText
+        incomeDate = (TextView) findViewById(R.id.edit_income_fragment_income_date);
+
     }
+
 
     // Defines customized navigation through the application.
     public void onBackPressed(){

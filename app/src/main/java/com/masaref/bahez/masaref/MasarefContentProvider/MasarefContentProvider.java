@@ -30,6 +30,8 @@ public class MasarefContentProvider  extends ContentProvider {
     private static final String TABLE_CARD="card";
     private static final String TABLE_USER="user";
     private static final String TABLE_CATEGORY="category";
+    private static final String TABLE_GLOBAL_CONFIGURATION="configuration";
+
     //--------------END---------------------------//
 
 
@@ -41,6 +43,8 @@ public class MasarefContentProvider  extends ContentProvider {
     static final String URL_CARD = "content://" + PROVIDER_NAME + "/tableCard";
     static final String URL_USER = "content://" + PROVIDER_NAME + "/tableUser";
     static final String URL_CATEGORY = "content://" + PROVIDER_NAME + "/tableCategory";
+    static final String URL_GLOBAL_CONFIGURATION = "content://" + PROVIDER_NAME + "/tableGlobalConfiguration";
+
     //--------------END---------------------------//
 
 
@@ -52,6 +56,8 @@ public class MasarefContentProvider  extends ContentProvider {
     public static final Uri URI_CARD = Uri.parse(URL_CARD);
     public static final Uri URI_USER = Uri.parse(URL_USER);
     public static final Uri URI_CATEGORY = Uri.parse(URL_CATEGORY);
+    public static final Uri URI_GLOBAL_CONFIGURATION = Uri.parse(URL_GLOBAL_CONFIGURATION);
+
     //--------------END---------------------------//
 
 
@@ -62,6 +68,8 @@ public class MasarefContentProvider  extends ContentProvider {
     static final int URI_CODE_CARD = 40;
     static final int URI_CODE_USER = 50;
     static final int URI_CODE_CATEGORY = 60;
+    static final int URI_CODE_GLOBAL_CONFIGURATION = 70;
+
     //--------------END---------------------------//
 
 
@@ -80,6 +88,8 @@ public class MasarefContentProvider  extends ContentProvider {
         uriMatcher.addURI(PROVIDER_NAME,"tableCard", URI_CODE_CARD);
         uriMatcher.addURI(PROVIDER_NAME,"tableUser", URI_CODE_USER);
         uriMatcher.addURI(PROVIDER_NAME,"tableCategory", URI_CODE_CATEGORY);
+        uriMatcher.addURI(PROVIDER_NAME,"tableGlobalConfiguration", URI_CODE_GLOBAL_CONFIGURATION);
+
     }
     //--------------END---------------------------//
 
@@ -93,13 +103,13 @@ public class MasarefContentProvider  extends ContentProvider {
 
     // START *********** TABLES WITH ITS FIELDS **********//
     // INCOME Table - column's name
-    static final String TABLE_INCOME_FIELD_ID = "income_id";
-    static final String TABLE_INCOME_FIELD_AMOUNT = "income_amount";
-    static final String TABLE_INCOME_FIELD_CARD_REF="card_id";
-    static final String TABLE_INCOME_FIELD_CATEGORY_REF="category_id";
-    static final String TABLE_INCOME_FIELD_DESCRIPTION="income_description";
-    static final String TABLE_INCOME_FIELD_DATE="income_date";
-    static final String TABLE_INCOME_FIELD_TIME="income_time";
+    public static final String TABLE_INCOME_FIELD_ID = "income_id";
+    public static final String TABLE_INCOME_FIELD_AMOUNT = "income_amount";
+    public static final String TABLE_INCOME_FIELD_CARD_REF="card_id";
+    public static final String TABLE_INCOME_FIELD_CATEGORY_REF="category_id";
+    public static final String TABLE_INCOME_FIELD_DESCRIPTION="income_description";
+    public static final String TABLE_INCOME_FIELD_DATE="income_date";
+    public static final String TABLE_INCOME_FIELD_TIME="income_time";
     // INCOME Table - CREATE
     private static final String CREATE_TABLE_INCOME = "CREATE TABLE " + TABLE_INCOME
             + "("
@@ -113,13 +123,13 @@ public class MasarefContentProvider  extends ContentProvider {
             + ")";
 
     // EXPENSE Table - column's name
-    static final String TABLE_EXPENSE_FIELD_ID = "expense_id";
-    static final String TABLE_EXPENSE_FIELD_AMOUNT = "expense_amount";
-    static final String TABLE_EXPENSE_FIELD_CARD_REF="card_id";
-    static final String TABLE_EXPENSE_FIELD_CATEGORY_REF="category_id";
-    static final String TABLE_EXPENSE_FIELD_DESCRIPTION="expense_description";
-    static final String TABLE_EXPENSE_FIELD_DATE="expense_date";
-    static final String TABLE_EXPENSE_FIELD_TIME="expense_time";
+    public static final String TABLE_EXPENSE_FIELD_ID = "expense_id";
+    public static final String TABLE_EXPENSE_FIELD_AMOUNT = "expense_amount";
+    public static final String TABLE_EXPENSE_FIELD_CARD_REF="card_id";
+    public static final String TABLE_EXPENSE_FIELD_CATEGORY_REF="category_id";
+    public static final String TABLE_EXPENSE_FIELD_DESCRIPTION="expense_description";
+    public static final String TABLE_EXPENSE_FIELD_DATE="expense_date";
+    public static final String TABLE_EXPENSE_FIELD_TIME="expense_time";
     // EXPENSE Table - CREATE
     private static final String CREATE_TABLE_EXPENSE = "CREATE TABLE " + TABLE_EXPENSE
             + "("
@@ -150,16 +160,12 @@ public class MasarefContentProvider  extends ContentProvider {
     //CARD Table- column's name
     static final String TABLE_CARD_FIELD_ID="card_id";
     static final String TABLE_CARD_FIELD_NAME="card_name";
-    static final String TABLE_CARD_FIELD_TOTAL_AMOUNT="card_total_amount";
-    static final String TABLE_CARD_FIELD_CURRENT_AMOUNT ="card_current_amount";
     static final String TABLE_CARD_FIELD_ICON="card_icon";
     // CARD table CREATE
     private static final String CREATE_TABLE_CARD = "CREATE TABLE " + TABLE_CARD
             + "("
             + TABLE_CARD_FIELD_ID + "                   INTEGER         PRIMARY KEY     AUTOINCREMENT,"
             + TABLE_CARD_FIELD_NAME + "                 TEXT    NOT NULL,"
-            + TABLE_CARD_FIELD_TOTAL_AMOUNT   +"        REAL            NOT NULL,"
-            + TABLE_CARD_FIELD_CURRENT_AMOUNT +"        REAL            NOT NULL,"
             + TABLE_CARD_FIELD_ICON +"                  INTEGER            NOT NULL"
             + ")";
 
@@ -215,6 +221,21 @@ public class MasarefContentProvider  extends ContentProvider {
             + TABLE_USER_FIELD_ORGANIZATION + "         TEXT,"
             + TABLE_USER_FIELD_OCCUPATION + "           TEXT"
             + ")";
+
+
+
+    //AGENDA Table- column's name
+    public static final String TABLE_GLOBAL_CONFIGURATION_FIELD_ID="conf_id";
+    public static final String TABLE_GLOBAL_CONFIGURATION_FIELD_NAME="conf_name";
+    public static final String TABLE_GLOBAL_CONFIGURATION_FIELD_VALUE="conf_value";
+
+    // AGNEDA table - CREATE
+    private static final String CREATE_TABLE_GLOBAL_CONFIGURATION = "CREATE TABLE " + TABLE_GLOBAL_CONFIGURATION
+            + "("
+            + TABLE_GLOBAL_CONFIGURATION_FIELD_ID + "             INTEGER     PRIMARY KEY     AUTOINCREMENT,"
+            + TABLE_GLOBAL_CONFIGURATION_FIELD_NAME + "           TEXT       NOT NULL,"
+            + TABLE_GLOBAL_CONFIGURATION_FIELD_VALUE   +"          TEXT    NOT NULL"
+            + ")";
     //--------------END---------------------------//
 
 
@@ -267,6 +288,10 @@ public class MasarefContentProvider  extends ContentProvider {
                 queryBuilder.setTables(TABLE_USER);
                 queryBuilder.setProjectionMap(values);
                 break;
+            case URI_CODE_GLOBAL_CONFIGURATION:
+                queryBuilder.setTables(TABLE_GLOBAL_CONFIGURATION);
+                queryBuilder.setProjectionMap(values);
+                break;
 
             default:
                 throw new IllegalArgumentException("Unknown URI" + uri);
@@ -295,6 +320,9 @@ public class MasarefContentProvider  extends ContentProvider {
                 return "vnd.android.cursor.dir/tableCategory";
             case URI_CODE_USER:
                 return "vnd.android.cursor.dir/tableUser";
+            case URI_CODE_GLOBAL_CONFIGURATION:
+                return "vnd.android.cursor.dir/tableGlobalConfiguration";
+
             default:
                 throw new IllegalArgumentException("Unknown URI" + uri);
         }
@@ -347,6 +375,14 @@ public class MasarefContentProvider  extends ContentProvider {
                     getContext().getContentResolver().notifyChange(_uri, null);
                 }
                 break;
+
+            case URI_CODE_GLOBAL_CONFIGURATION:
+                long _ID7 = sqlDB.insert(TABLE_GLOBAL_CONFIGURATION, "", values);
+                if(_ID7 > 0){
+                    _uri = ContentUris.withAppendedId(URI_GLOBAL_CONFIGURATION, _ID7);
+                    getContext().getContentResolver().notifyChange(_uri, null);
+                }
+                break;
             default:
                 throw new IllegalArgumentException("Unknown URI" + uri);
         }
@@ -377,6 +413,10 @@ public class MasarefContentProvider  extends ContentProvider {
             case URI_CODE_USER:
                 rowsDeleted = sqlDB.delete(TABLE_USER, selection, selectionArgs);
                 break;
+            case URI_CODE_GLOBAL_CONFIGURATION:
+                rowsDeleted = sqlDB.delete(TABLE_GLOBAL_CONFIGURATION, selection, selectionArgs);
+                break;
+
             default:
                 throw new IllegalArgumentException("Unknown URI" + uri);
         }
@@ -411,6 +451,9 @@ public class MasarefContentProvider  extends ContentProvider {
             case URI_CODE_USER:
                 rowsUpdated = sqlDB.update(TABLE_USER, values, selection, selectionArgs);
                 break;
+            case URI_CODE_GLOBAL_CONFIGURATION:
+                rowsUpdated = sqlDB.update(TABLE_GLOBAL_CONFIGURATION, values, selection, selectionArgs);
+                break;
             default:
                 throw new IllegalArgumentException("Unknown URI" + uri);
         }
@@ -437,6 +480,8 @@ public class MasarefContentProvider  extends ContentProvider {
             sqlDB.execSQL(CREATE_TABLE_CARD);
             sqlDB.execSQL(CREATE_TABLE_CATEGORY);
             sqlDB.execSQL(CREATE_TABLE_USER);
+            sqlDB.execSQL(CREATE_TABLE_GLOBAL_CONFIGURATION);
+
 
 
         }
@@ -450,7 +495,7 @@ public class MasarefContentProvider  extends ContentProvider {
             sqlDB.execSQL("DROP TABLE IF EXISTS " + TABLE_CARD);
             sqlDB.execSQL("DROP TABLE IF EXISTS " + TABLE_CATEGORY);
             sqlDB.execSQL("DROP TABLE IF EXISTS " + TABLE_USER);
-
+            sqlDB.execSQL("DROP TABLE IF EXISTS " + TABLE_GLOBAL_CONFIGURATION);
 
             onCreate(sqlDB);
         }
